@@ -7,16 +7,12 @@
                 <h1><a href="">El blog de Paula, la nueva Django Girl</a></h1>
             </div>
 
-            <div>
-                <p>published: 20.11.2015, 13:30</p>
-                <h2><a href="">Mi primer post</a></h2>
-                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-
-            <div>
-                <p>published: 20.11.2015, 13:31</p>
-                <h2><a href="">Mi segundo post</a></h2>
-                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-            </div>
+			{% for post in posts %}
+        		<div>
+            		<p>published: {{ post.published_date }}</p>
+            		<h1><a href="">{{ post.title }}</a></h1>
+           			<p>{{ post.text|linebreaks }}</p>
+       			 </div>
+    		{% endfor %}
         </body>
     </html>
